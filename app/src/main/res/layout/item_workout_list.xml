@@ -13,13 +13,7 @@
 
 
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        
+
 
         <TextView
             android:id="@+id/WorkoutItemNameTextView"
@@ -35,36 +29,70 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/WorkoutItemNameTextView"
+                android:id="@+id/WorkoutItemFekvoTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="ElsoEdzes" />
+                tools:text="Fekvo" />
 
             <TextView
-                android:id="@+id/WorkoutItemNameTextView"
+                android:id="@+id/WorkoutItemHuzoTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="ElsoEdzes" />
+                tools:text="Huzo" />
 
             <TextView
-                android:id="@+id/WorkoutItemNameTextView"
+                android:id="@+id/WorkoutItemToloTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="ElsoEdzes" />
+                tools:text="Tolo" />
 
             <TextView
-                android:id="@+id/WorkoutItemNameTextView"
+                android:id="@+id/WorkoutItemHasTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="ElsoEdzes" />
+                tools:text="Has" />
 
 
         </LinearLayout>
 
-        
-        
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/WorkoutItemSumOfFekvoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/WorkoutItemSumOfHuzoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/WorkoutItemSumOfToloTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/WorkoutItemSumOfHasTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="10" />
+
+
     </LinearLayout>
 
 
 
+
 </LinearLayout>
+
+
+

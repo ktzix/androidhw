@@ -2,4 +2,8 @@
     <string name="app_name">homework</string>
     <string name="history">History</string>
     <string name="new_training">New Training</string>
+    <string name="appbar_scrolling_view_behavior">appbar_scrolling_view_behaviour</string>
+    <string name="start">Start</string>
+    <string name="stop">stop</string>
+    <string name="Start_New_Training">startNewTraining</string>
 </resources>

@@ -16,7 +16,7 @@ import java.util.List;
 )
 
 public abstract class WorkoutListDatabase extends RoomDatabase {
-    public abstract WorkoutItem shoppingItemDao();
+    public abstract WorkoutItemDao WorkoutItemDao();
 }
 
 
