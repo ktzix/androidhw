@@ -10,13 +10,14 @@ import android.widget.Chronometer;
 public class NewTrainingActivity extends AppCompatActivity {
 
     Chronometer chronometer;
-    Button start, stop;
+    Button start, stop, results;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_training);
 
+        results = (Button) findViewById(R.id.btnResults);
         start = (Button) findViewById(R.id.startButton);
         stop = (Button) findViewById(R.id.stopButton);
         chronometer = (Chronometer) findViewById(R.id.simpleChronometer);
@@ -27,6 +28,7 @@ public class NewTrainingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 chronometer.setBase(SystemClock.elapsedRealtime());
                 chronometer.start();
+                results.setVisibility(View.GONE);
             }
         });
 
@@ -35,6 +37,14 @@ public class NewTrainingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 chronometer.stop();
+                results.setVisibility(View.VISIBLE);
+            }
+        });
+
+        results.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

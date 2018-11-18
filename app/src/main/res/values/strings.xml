@@ -6,4 +6,5 @@
     <string name="start">Start</string>
     <string name="stop">stop</string>
     <string name="Start_New_Training">startNewTraining</string>
+    <string name="Results">results</string>
 </resources>
