@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ResultsActivity">
+    <TextView
+        android:id="@+id/tvhuzo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/huzo"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/ethuzo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvhuzo"
+        android:text=""
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/tvtolo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tolo"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/ettolo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvtolo"
+        android:text=""
+        android:inputType="numberDecimal"/>
+
+
+    <TextView
+        android:id="@+id/tvfekvo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvfekvo"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvfekvo"
+        android:text=""
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/tvhas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/has"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/ethas"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvfekvo"
+        android:text=""
+        android:inputType="numberDecimal"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chartHoliday"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+  
+
+</LinearLayout>

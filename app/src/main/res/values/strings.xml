@@ -7,4 +7,9 @@
     <string name="stop">stop</string>
     <string name="Start_New_Training">startNewTraining</string>
     <string name="Results">results</string>
+    <string name="fekvo">Fekvo:</string>
+    <string name="tvfekvo">fekvo</string>
+    <string name="has">has</string>
+    <string name="tolo">tolo</string>
+    <string name="huzo">huzo</string>
 </resources>

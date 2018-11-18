@@ -1,5 +1,6 @@
 package com.example.jozsi.homework;
 
+import android.content.Intent;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,6 +45,8 @@ public class NewTrainingActivity extends AppCompatActivity {
         results.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent resultsIntent = new Intent(NewTrainingActivity.this, ResultsActivity.class);
+                startActivity(resultsIntent);
 
             }
         });
