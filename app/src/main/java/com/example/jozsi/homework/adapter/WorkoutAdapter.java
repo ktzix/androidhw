@@ -39,13 +39,15 @@ public class WorkoutAdapter
     public void onBindViewHolder(@NonNull WorkoutViewHolder holder, int position) {
         WorkoutItem item =items.get(position);
         holder.huzo.setText("PullUps");
-        holder.sumOfHuzo.setText(item.huzo);
+        holder.sumOfHuzo.setText(String.valueOf(item.huzo));
         holder.fekvo.setText("PushUps");
-        holder.sumOfFekvo.setText(item.fekvo);
+        holder.sumOfFekvo.setText(String.valueOf(item.fekvo));
         holder.tolo.setText("Dips");
-        holder.sumOfTolo.setText(item.tolo);
+        holder.sumOfTolo.setText(String.valueOf(item.tolo));
         holder.has.setText("Abs");
-        holder.sumOfHas.setText(item.has);
+        holder.sumOfHas.setText(String.valueOf(item.has));
+
+        holder.item = item;
     }
 
     @Override
