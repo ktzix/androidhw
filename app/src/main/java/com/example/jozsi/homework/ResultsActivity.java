@@ -1,6 +1,7 @@
 package com.example.jozsi.homework;
 
 import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,9 +12,19 @@ import android.widget.EditText;
 import com.example.jozsi.homework.adapter.WorkoutAdapter;
 import com.example.jozsi.homework.data.WorkoutItem;
 import com.example.jozsi.homework.data.WorkoutListDatabase;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ResultsActivity extends AppCompatActivity  {
 
+
+    PieChart workoutChart;
     EditText tolo,fekvo,huzo,has;
     Button submit;
 
@@ -38,6 +49,7 @@ public class ResultsActivity extends AppCompatActivity  {
         huzo = (EditText) findViewById(R.id.ethuzo);
         has = (EditText) findViewById(R.id.ethas);
         submit = (Button) findViewById(R.id.btnSubmit);
+        workoutChart = (PieChart) findViewById(R.id.chartWorkout);
 
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +57,7 @@ public class ResultsActivity extends AppCompatActivity  {
             public void onClick(View v) {
 
                 onWorkoutItemCreated(getWorkoutItem());
+                loadResults();
             }
         });
     }
@@ -80,5 +93,29 @@ public class ResultsActivity extends AppCompatActivity  {
     }
 
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();  // optional depending on your needs
+        Intent menuIntent = new Intent(ResultsActivity.this, MenuActivity.class);
+        startActivity(menuIntent);
+
+    }
+
+    private void loadResults() {
+        List<PieEntry> entries = new ArrayList<>();
+
+        entries.add(new PieEntry(Integer.parseInt(tolo.getText().toString()), "tolo"));
+        entries.add(new PieEntry(Integer.parseInt(has.getText().toString()), "has"));
+        entries.add(new PieEntry(Integer.parseInt(huzo.getText().toString()), "huzo"));
+        entries.add(new PieEntry(Integer.parseInt(fekvo.getText().toString()), "fekvo"));
+
+        PieDataSet dataSet = new PieDataSet(entries, "Items");
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        PieData data = new PieData(dataSet);
+        workoutChart.setData(data);
+        workoutChart.invalidate();
+    }
 
 }

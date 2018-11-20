@@ -27,6 +27,7 @@ public class HistoryActivity extends AppCompatActivity implements WorkoutAdapter
         setContentView(R.layout.activity_history);
 
 
+
         database = Room.databaseBuilder(
                 getApplicationContext(),
                 WorkoutListDatabase.class,
