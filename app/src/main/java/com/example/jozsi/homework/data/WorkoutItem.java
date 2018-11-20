@@ -26,7 +26,7 @@ public class WorkoutItem {
     public Integer huzo;
 
     @ColumnInfo(name= "Tolo")
-    public String tolo;
+    public Integer tolo;
 
 
     @ColumnInfo(name= "Has")

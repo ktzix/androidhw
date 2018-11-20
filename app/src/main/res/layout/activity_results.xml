@@ -44,7 +44,7 @@
         android:textColor="#000000" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/etfekvo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvfekvo"
@@ -62,16 +62,24 @@
         android:id="@+id/ethas"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvfekvo"
+        android:layout_below="@id/tvhas"
         android:text=""
         android:inputType="numberDecimal"/>
 
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/Submit" />
+
     <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/chartHoliday"
+        android:id="@+id/chartWorkout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-  
+
 
 </LinearLayout>
