@@ -9,12 +9,14 @@ import android.widget.TextView;
 
 import com.example.jozsi.homework.R;
 import com.example.jozsi.homework.data.WorkoutItem;
+import com.example.jozsi.homework.touch.TouchHelperNotifier;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WorkoutAdapter
-        extends RecyclerView.Adapter<WorkoutAdapter.WorkoutViewHolder> {
+        extends RecyclerView.Adapter<WorkoutAdapter.WorkoutViewHolder> implements TouchHelperNotifier {
 
     private final List<WorkoutItem> items;
 
@@ -100,4 +102,28 @@ public class WorkoutAdapter
         items.addAll(workoutItems);
         notifyDataSetChanged();
     }
+
+
+    public void onItemDismissed(int position) {
+
+        items.remove(position);
+
+        notifyItemRemoved(position);
+    }
+
+    @Override
+    public void onItemMoved(int fromPosition, int toPosition) {
+        if (fromPosition < toPosition) {
+            for (int i = fromPosition; i < toPosition; i++) {
+                Collections.swap(items, i, i + 1);
+            }
+        } else {
+            for (int i = fromPosition; i > toPosition; i--) {
+                Collections.swap(items, i, i - 1);
+            }
+        }
+
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
 }

@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 
 import com.example.jozsi.homework.adapter.WorkoutAdapter;
 import com.example.jozsi.homework.data.WorkoutItem;
 import com.example.jozsi.homework.data.WorkoutListDatabase;
+import com.example.jozsi.homework.touch.TodoItemTouchHelperCallback;
 
 import java.util.List;
 
@@ -34,7 +36,15 @@ public class HistoryActivity extends AppCompatActivity implements WorkoutAdapter
                 "workout-list"
         ).build();
 
+
+
+
         initRecyclerView();
+
+        ItemTouchHelper.Callback callback =
+                new TodoItemTouchHelperCallback(adapter);
+        ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
+        touchHelper.attachToRecyclerView(recyclerView);
     }
 
     private void initRecyclerView() {
