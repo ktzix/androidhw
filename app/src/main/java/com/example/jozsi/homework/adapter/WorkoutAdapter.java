@@ -15,15 +15,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class WorkoutAdapter
         extends RecyclerView.Adapter<WorkoutAdapter.WorkoutViewHolder> implements TouchHelperNotifier {
 
     private final List<WorkoutItem> items;
 
     private WorkoutItemClickListener listener;
+    private WorkoutItemsSwiped swipeListener;
 
-    public WorkoutAdapter(WorkoutItemClickListener listener) {
+    public WorkoutAdapter(WorkoutItemClickListener listener, WorkoutItemsSwiped swipeListener) {
         this.listener = listener;
+        this.swipeListener = swipeListener;
         items = new ArrayList<>();
     }
 
@@ -40,13 +43,13 @@ public class WorkoutAdapter
     @Override
     public void onBindViewHolder(@NonNull WorkoutViewHolder holder, int position) {
         WorkoutItem item =items.get(position);
-        holder.huzo.setText("PullUps");
+        holder.huzo.setText((R.string.pullups));
         holder.sumOfHuzo.setText(String.valueOf(item.huzo));
-        holder.fekvo.setText("PushUps");
+        holder.fekvo.setText((R.string.pushups));
         holder.sumOfFekvo.setText(String.valueOf(item.fekvo));
-        holder.tolo.setText("Dips");
+        holder.tolo.setText((R.string.dips));
         holder.sumOfTolo.setText(String.valueOf(item.tolo));
-        holder.has.setText("Abs");
+        holder.has.setText((R.string.Abs));
         holder.sumOfHas.setText(String.valueOf(item.has));
 
         holder.item = item;
@@ -79,7 +82,6 @@ public class WorkoutAdapter
         WorkoutViewHolder(View itemView) {
             super(itemView);
 
-            itemName = itemView.findViewById(R.id.WorkoutItemNameTextView);
             huzo = itemView.findViewById(R.id.WorkoutItemHuzoTextView);
             sumOfHuzo= itemView.findViewById(R.id.WorkoutItemSumOfHuzoTextView);
             fekvo = itemView.findViewById(R.id.WorkoutItemFekvoTextView);
@@ -106,8 +108,10 @@ public class WorkoutAdapter
 
     public void onItemDismissed(int position) {
 
-        items.remove(position);
+        WorkoutItem temp = items.get(position);
 
+        items.remove(position);
+        this.swipeListener.onWorkoutItemDeleted(temp);
         notifyItemRemoved(position);
     }
 
@@ -125,5 +129,11 @@ public class WorkoutAdapter
 
         notifyItemMoved(fromPosition, toPosition);
     }
+
+    public interface WorkoutItemsSwiped {
+        void onWorkoutItemDeleted(WorkoutItem item);
+    }
+
+
 
 }

@@ -1,5 +1,6 @@
 package com.example.jozsi.homework;
 
+import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.jozsi.homework.adapter.WorkoutAdapter;
 import com.example.jozsi.homework.data.WorkoutItem;
 import com.example.jozsi.homework.data.WorkoutListDatabase;
 import com.github.mikephil.charting.charts.PieChart;
@@ -28,7 +28,6 @@ public class ResultsActivity extends AppCompatActivity  {
     EditText tolo,fekvo,huzo,has;
     Button submit;
 
-    private WorkoutAdapter adapter;
 
     private WorkoutListDatabase database;
 
@@ -44,12 +43,12 @@ public class ResultsActivity extends AppCompatActivity  {
                 "workout-list"
         ).build();
 
-        tolo = (EditText) findViewById(R.id.ettolo);
-        fekvo = (EditText) findViewById(R.id.etfekvo);
-        huzo = (EditText) findViewById(R.id.ethuzo);
-        has = (EditText) findViewById(R.id.ethas);
-        submit = (Button) findViewById(R.id.btnSubmit);
-        workoutChart = (PieChart) findViewById(R.id.chartWorkout);
+        tolo = findViewById(R.id.ettolo);
+        fekvo = findViewById(R.id.etfekvo);
+        huzo = findViewById(R.id.ethuzo);
+        has = findViewById(R.id.ethas);
+        submit = findViewById(R.id.btnSubmit);
+        workoutChart = findViewById(R.id.chartWorkout);
 
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -66,20 +65,18 @@ public class ResultsActivity extends AppCompatActivity  {
     private WorkoutItem getWorkoutItem(){
         WorkoutItem workoutItem= new WorkoutItem();
 
+
+
         workoutItem.huzo = Integer.parseInt(tolo.getText().toString());
         workoutItem.has = Integer.parseInt(has.getText().toString());
         workoutItem.fekvo = Integer.parseInt(fekvo.getText().toString());
         workoutItem.tolo = Integer.parseInt(tolo.getText().toString());
 
-        workoutItem.sumOfWorkout = Integer.parseInt(tolo.getText().toString())+
-                Integer.parseInt(has.getText().toString())+
-                Integer.parseInt(fekvo.getText().toString())+
-                Integer.parseInt(tolo.getText().toString());
-
 
         return workoutItem;
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void onWorkoutItemCreated(final WorkoutItem newItem) {
         new AsyncTask<Void, Void, WorkoutItem>() {
 

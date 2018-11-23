@@ -13,4 +13,8 @@
     <string name="tolo">tolo</string>
     <string name="huzo">huzo</string>
     <string name="Submit">submit</string>
+    <string name="pushups">PushUps</string>
+    <string name="pullups">PullUps</string>
+    <string name="dips">Dips</string>
+    <string name="Abs">Abs</string>
 </resources>

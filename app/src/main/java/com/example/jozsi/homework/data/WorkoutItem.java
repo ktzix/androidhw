@@ -5,7 +5,6 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-import java.util.Date;
 
 @Entity(tableName = "workoutitem")
 public class WorkoutItem {
@@ -14,8 +13,6 @@ public class WorkoutItem {
     @ColumnInfo(name = "id")
     public Long id;
 
-    @ColumnInfo(name= "WorkoutName")
-    public String name;
 
 
    @ColumnInfo(name= "Fekvo")
@@ -33,7 +30,6 @@ public class WorkoutItem {
     public Integer has;
 
 
-    @ColumnInfo(name = "SumOfWorkout")
-    public int sumOfWorkout;
+
 
 }

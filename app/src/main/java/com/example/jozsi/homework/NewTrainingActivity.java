@@ -18,10 +18,10 @@ public class NewTrainingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_training);
 
-        results = (Button) findViewById(R.id.btnResults);
-        start = (Button) findViewById(R.id.startButton);
-        stop = (Button) findViewById(R.id.stopButton);
-        chronometer = (Chronometer) findViewById(R.id.simpleChronometer);
+        results = findViewById(R.id.btnResults);
+        start = findViewById(R.id.startButton);
+        stop = findViewById(R.id.stopButton);
+        chronometer = findViewById(R.id.simpleChronometer);
 
 
         start.setOnClickListener(new View.OnClickListener() {
